@@ -1,0 +1,5 @@
+src/synthesis/modules/stavka_a.v
+src/synthesis/modules/stavka_b.v
+src/synthesis/modules/stavka_c.v
+src/synthesis/modules/stavka_f.v
+src/synthesis/DE0_TOP.v

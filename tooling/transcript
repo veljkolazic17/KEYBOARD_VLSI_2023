@@ -1,0 +1,52 @@
+# vsim -c -lib work -wlf ./waveform.wlf -do "./config/run.tcl" optimized_design 
+# Start time: 21:42:35 on Feb 10,2023
+# //  Questa Sim-64
+# //  Version 10.4c win64 Jul 20 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.ps2(fast)
+# Loading work.testbench_ps2(fast)
+# do ./config/run.tcl
+# time = 10, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 30, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 50, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 70, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 90, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 110, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 130, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 150, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 170, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 190, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 210, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 230, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
+# time = 250, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
+# time = 270, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 290, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 310, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 330, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
+# time = 350, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
+# time = 370, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
+# time = 390, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 410, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 430, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 450, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
+# time = 470, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
+# time = 490, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# time = 510, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# time = 530, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# time = 550, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# ** Note: $finish    : ../src/simulation/testbench_ps2.v(32)
+#    Time: 560 ps  Iteration: 0  Instance: /testbench_ps2
+# End time: 21:42:37 on Feb 10,2023, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
