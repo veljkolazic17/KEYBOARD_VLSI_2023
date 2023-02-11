@@ -1,5 +1,5 @@
 # vsim -c -lib work -wlf ./waveform.wlf -do "./config/run.tcl" optimized_design 
-# Start time: 21:42:35 on Feb 10,2023
+# Start time: 17:26:56 on Feb 11,2023
 # //  Questa Sim-64
 # //  Version 10.4c win64 Jul 20 2015
 # //
@@ -18,35 +18,61 @@
 # Loading work.ps2(fast)
 # Loading work.testbench_ps2(fast)
 # do ./config/run.tcl
-# time = 10, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
-# time = 30, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
-# time = 50, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
-# time = 70, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
-# time = 90, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
-# time = 110, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
-# time = 130, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
-# time = 150, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
-# time = 170, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
-# time = 190, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
-# time = 210, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
-# time = 230, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
-# time = 250, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
-# time = 270, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 290, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 310, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 330, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
-# time = 350, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
-# time = 370, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
-# time = 390, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 410, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 430, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 450, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 00f0
-# time = 470, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 00f0
-# time = 490, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
-# time = 510, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
-# time = 530, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
-# time = 550, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
-# ** Note: $finish    : ../src/simulation/testbench_ps2.v(32)
-#    Time: 560 ps  Iteration: 0  Instance: /testbench_ps2
-# End time: 21:42:37 on Feb 10,2023, Elapsed time: 0:00:02
+# time = 100, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 120, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 140, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 160, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 180, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 200, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 220, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 240, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 260, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 280, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 300, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 320, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 340, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 360, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 380, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 400, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 420, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 440, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 460, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 480, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 0000
+# time = 500, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 520, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 0000
+# time = 540, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 560, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 580, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 600, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 620, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 640, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 660, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 001c
+# time = 680, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 001c
+# time = 700, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 001c
+# time = 720, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 001c
+# time = 740, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 001c
+# time = 760, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 780, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 800, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 820, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 840, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 860, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 001c
+# time = 880, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 1cf0
+# time = 900, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 1cf0
+# time = 920, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 1cf0
+# time = 940, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 1cf0
+# time = 960, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 1cf0
+# time = 980, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 1cf0
+# time = 1000, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 1cf0
+# time = 1020, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 1cf0
+# time = 1040, dut_kb_clk = 0, dut_kb_data = 0, dut_buffer_out = 1cf0
+# time = 1060, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 1cf0
+# time = 1080, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = 1cf0
+# time = 1100, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# time = 1120, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# time = 1140, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# time = 1160, dut_kb_clk = 0, dut_kb_data = 1, dut_buffer_out = f01c
+# ** Note: $finish    : ../src/simulation/testbench_ps2.v(84)
+#    Time: 1173 ps  Iteration: 0  Instance: /testbench_ps2
+# End time: 17:26:58 on Feb 11,2023, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0

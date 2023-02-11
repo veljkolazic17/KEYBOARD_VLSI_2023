@@ -9,8 +9,8 @@ z2
 cModel Technology
 Z0 dC:/Users/admin/Desktop/Projekat/tooling
 Toptimized_design
-Z1 !s110 1676061753
-Vn8F`cccNVTzgUI5nFjn[n2
+Z1 !s110 1676132814
+VzG6nU0?IK67I_904?B_g31
 04 3 4 work ps2 fast 0
 04 13 4 work testbench_ps2 fast 0
 o-work work -override_timescale {1 ps / 1 ps} +acc
@@ -19,11 +19,11 @@ OL;O;10.4c;61
 vps2
 R1
 !i10b 1
-!s100 5LID5IGa[lN__b@PGEckO2
-IBSHI4b<8aFVCcgRXQm2]b1
+!s100 ihWgo6hFV4S;NFmE?_E911
+IHWNTW=8Yz`J=1z@4lGGXF2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1676061542
+w1676132741
 8../src/simulation/modules/ps2.v
 F../src/simulation/modules/ps2.v
 L0 1
@@ -31,7 +31,7 @@ Z3 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z4 !s108 1676061753.000000
+Z4 !s108 1676132814.000000
 Z5 !s107 ../src/simulation/testbench_ps2.v|../src/simulation/modules/ps2.v|
 Z6 !s90 -work|work|-l|./vlog_compile.log|-override_timescale|1 ps / 1 ps|../src/simulation/modules/ps2.v|../src/simulation/testbench_ps2.v|
 !i113 0
@@ -39,11 +39,11 @@ Z7 o-work work -override_timescale {1 ps / 1 ps} -L mtiAvm -L mtiRnm -L mtiOvm -
 vtestbench_ps2
 R1
 !i10b 1
-!s100 27cDEGkSiB5?;z4Y=h_Ak2
-IlNS0B@XUMh<>1eP5DB70g3
+!s100 :hEJbSD>PFMd9nnSbYCcD2
+I9lIbRHOi4?64zDbD=F:ok1
 R2
 R0
-w1676061555
+w1676132813
 8../src/simulation/testbench_ps2.v
 F../src/simulation/testbench_ps2.v
 L0 1

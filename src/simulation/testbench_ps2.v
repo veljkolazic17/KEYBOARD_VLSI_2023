@@ -9,25 +9,77 @@ wire dut_error;
 
 
 ps2 dut(
+    dut_clk,
     dut_kb_clk,
     dut_kb_data,
-    dut_buffer_out
+    dut_buffer_out,
+    dut_rst_n
 );
 
 initial begin
     dut_clk = 1'b0;
     dut_rst_n = 1'b0;
+    #100 dut_rst_n = 1'b1;
     dut_kb_clk = 1'b1;
 
 
+    dut_kb_data = 1'b1;
+    #203 dut_kb_data = 1'b0;
 
-    dut_kb_data = 1'b0;
-    #100 dut_kb_data = 1'b1;
 
-    #160 dut_kb_data = 1'b0;
-    #60 dut_kb_data = 1'b1;
-    #60 dut_kb_data = 1'b0;
-    #80 dut_kb_data = 1'b1;
+
+
+
+    // E0
+    // 0
+    // #20 dut_kb_data = 1'b0;
+
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+
+    // F0
+    // 0
+    #150 dut_kb_data = 1'b0;
+
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    // F
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+
+    // 6C
+    #20 dut_kb_data = 1'b0;
+
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+    #20 dut_kb_data = 1'b0;
+
+    #20 dut_kb_data = 1'b1;
+    #20 dut_kb_data = 1'b1;
+
     #100
     $finish;
 

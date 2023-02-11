@@ -1,5 +1,5 @@
 QuestaSim-64 vopt 10.4c Compiler 2015.07 Jul 20 2015
-Start time: 21:42:33 on Feb 10,2023
+Start time: 17:26:54 on Feb 11,2023
 vopt -work work -l ./vlog_compile.log -override_timescale 1 ps / 1 ps "+acc" -o optimized_design ps2 testbench_ps2 
 
 Top level modules:
@@ -10,8 +10,8 @@ Analyzing design...
 -- Loading module ps2
 -- Loading module testbench_ps2
 Optimizing 2 design-units (inlining 0/2 module instances, 0/0 UDP instances):
--- Optimizing module ps2(fast)
 -- Optimizing module testbench_ps2(fast)
+-- Optimizing module ps2(fast)
 Optimized design name is optimized_design
-End time: 21:42:33 on Feb 10,2023, Elapsed time: 0:00:00
+End time: 17:26:54 on Feb 11,2023, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

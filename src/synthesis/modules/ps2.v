@@ -16,7 +16,7 @@ module ps2(input PS2_KBCLK,
     localparam ODD_PARITY  = 1;
     localparam SECOND_BYTE = 8;
 
-    reg start_bit = 0;
+    reg start_bit_reg = 0, start_bit_next = 0;
 
     reg [15:0] code_vector_buffer_reg = 0, code_vector_buffer_next = 0;
     
@@ -26,6 +26,7 @@ module ps2(input PS2_KBCLK,
         data_bit           <= PS2_KBDAT;
         parity_counter_reg <= parity_counter_next;
         code_vector_buffer_reg <= code_vector_buffer_next;
+        start_bit_reg <= start_bit_next;
         
     end
 
@@ -34,16 +35,19 @@ module ps2(input PS2_KBCLK,
         code_vector_next    = code_vector_reg;
         parity_counter_next = parity_counter_reg;
         code_vector_buffer_next = code_vector_buffer_reg;
+        start_bit_next = start_bit_reg;
+
+
         if (counter_next == 0) begin 
             if (data_bit != START) begin
                 //error handling
                 counter_next        = -1;
                 parity_counter_next = 0;
                 code_vector_buffer_next = 0;
-                start_bit = 0;
+                start_bit_next = 0;
             end
             else begin
-                start_bit = 1;
+                start_bit_next = 1;
             end
         end
         if (counter_next > 0  && counter_next < 9) begin
@@ -62,12 +66,12 @@ module ps2(input PS2_KBCLK,
                 //error handling
             end
             else begin
-                 if(start_bit == 1) begin
+                 if(start_bit_next == 1) begin
                      code_vector_next = code_vector_next << SECOND_BYTE;
                      code_vector_next = code_vector_buffer_next | code_vector_next;
                  end
             end
-            start_bit = 0;
+            start_bit_next = 0;
             counter_next        = -1;
             parity_counter_next = 0;
             code_vector_buffer_next = 0;
