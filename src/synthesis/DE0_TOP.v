@@ -189,7 +189,10 @@ module DE0_TOP (CLOCK_50,
     // ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  ==  == 
     
     wire DEBOUNCED_PS2_KBCLK;
+	 wire[1:0] ERR_CODE;
 
+	 assign LEDG[1:0] = ERR_CODE;
+	 
     deb DEBOUNCER(
         CLOCK_50,
         SW[0],
@@ -200,11 +203,21 @@ module DE0_TOP (CLOCK_50,
     wire [15:0]PS2_HANDLER_OUTPUT_16;
 
     ps2 PS2_HANDLER(
+		  CLOCK_50,
         DEBOUNCED_PS2_KBCLK,
         PS2_KBDAT,
-        PS2_HANDLER_OUTPUT_16
+        PS2_HANDLER_OUTPUT_16,
+		  SW[0],
+		  ERR_CODE
     );
 
+	 
+	 assign HEX0_DP = 1'b1;
+	 assign HEX1_DP = 1'b1;
+	 assign HEX2_DP = 1'b1;
+	 assign HEX3_DP = 1'b1;
+	 
+	 
     hex HEX0(PS2_HANDLER_OUTPUT_16[3:0],HEX0_D);
     hex HEX1(PS2_HANDLER_OUTPUT_16[7:4],HEX1_D);
     hex HEX2(PS2_HANDLER_OUTPUT_16[11:8],HEX2_D);
