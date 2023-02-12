@@ -4,7 +4,7 @@ module ps2(
            input PS2_KBDAT,
            output [15:0]code_vector,
            input rst_n,
-			  output ERR_CODE
+			  output[1:0] ERR_CODE
 		);
 		
 		
@@ -74,6 +74,7 @@ module ps2(
 					if(data_bit == 0) begin
 						STATE_next = READING;
 						COUNTER_next = 0;
+						err_code_next = 0;
 					end					
 				end
 				READING: begin
@@ -94,11 +95,10 @@ module ps2(
 				END_READ: begin
 					if(COUNTER_next == 0) begin
 						if(data_bit == 1'b1 && parity_counter_next % 2 == 1 || data_bit == 1'b0 && parity_counter_next % 2 == 0) begin
-							STATE_next = NOT_ACTIVE;
-							COUNTER_next = 0;
-							parity_counter_next = 0;
-							code_vector_next = 0;
-							code_vector_buffer_next = 0;
+							// COUNTER_next = 0;
+							// parity_counter_next = 0;
+							// code_vector_next = 0;
+							// code_vector_buffer_next = 0;
 							
 							err_code_next = 2'b01;
 						end
@@ -108,25 +108,30 @@ module ps2(
 						if(data_bit == 0) begin
 							code_vector_next = 0;
 							code_vector_buffer_next = 0;
-							err_code_next = 2'b10;
+							err_code_next = err_code_next | 2'b10;
 						end
 						else begin
-							
-							if(code_vector_next[7:0] == code_vector_buffer_next || (
+							if(err_code_next != 2'b01) begin
+								if(code_vector_next[7:0] == code_vector_buffer_next || (
 								code_vector_next[7:0] != 8'hE0 && code_vector_next[7:0] != 8'hF0 && code_vector_next[15:8] == 8'h00
-							)) begin
-								code_vector_next = {{8{1'b0}}, code_vector_buffer_next};
-							end		
-							else if(	(code_vector_next[15:8] == 8'hF0 || code_vector_next[15:8] == 8'hE0) &&
-										(code_vector_next[7:0] != 8'hF0 && code_vector_next[7:0] != 8'hE0)
-							) begin 
-								code_vector_next = 0;
-								code_vector_next = code_vector_next | code_vector_buffer_next;
-							end
-							else begin
-								code_vector_next = code_vector_next << 8;
-								code_vector_next = code_vector_next | code_vector_buffer_next;
+								)) begin
+									code_vector_next = {{8{1'b0}}, code_vector_buffer_next};
+								end		
+								else if(	(code_vector_next[15:8] == 8'hF0 || code_vector_next[15:8] == 8'hE0) &&
+											(code_vector_next[7:0] != 8'hF0 && code_vector_next[7:0] != 8'hE0)
+								) begin 
+									code_vector_next = 0;
+									code_vector_next = code_vector_next | code_vector_buffer_next;
+								end
+								else begin
+									code_vector_next = code_vector_next << 8;
+									code_vector_next = code_vector_next | code_vector_buffer_next;
+								end	
 							end	
+							else begin
+								code_vector_next = 0;
+								code_vector_buffer_next = 0;
+							end
 						end
 						COUNTER_next = -1;
 						parity_counter_next = 0;
@@ -135,9 +140,7 @@ module ps2(
 					
 					COUNTER_next = COUNTER_next + 1;
 				
-				end
-						
-			
+				end	
 			endcase
 		
 		

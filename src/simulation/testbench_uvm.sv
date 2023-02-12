@@ -10,9 +10,14 @@ class ps2_item extends uvm_sequence_item;
 	bit [15:0] code_vector;
 	bit [1:0]ERR_CODE;
 
-	constraint c1 { PS2_KBDAT[0] inside {1'b0}; }
-	constraint c2 { PS2_KBDAT[10] inside {1'b1}; }
-	constraint c3 { PS2_KBDAT[9] == !((PS2_KBDAT[1] + PS2_KBDAT[2] + PS2_KBDAT[3] + PS2_KBDAT[4] + PS2_KBDAT[5] + PS2_KBDAT[6] + PS2_KBDAT[7] + PS2_KBDAT[8])%2); }
+	constraint c1 { PS2_KBDAT[0] dist {1'b0:/100}; }
+	constraint c2 { PS2_KBDAT[10] dist {1'b1:/99, 1'b0:/1}; }
+
+	constraint c3 { PS2_KBDAT[9] dist { !((PS2_KBDAT[1] + PS2_KBDAT[2] + PS2_KBDAT[3] + PS2_KBDAT[4] + PS2_KBDAT[5] + PS2_KBDAT[6] + PS2_KBDAT[7] + PS2_KBDAT[8])%2):/99, 
+										((PS2_KBDAT[1] + PS2_KBDAT[2] + PS2_KBDAT[3] + PS2_KBDAT[4] + PS2_KBDAT[5] + PS2_KBDAT[6] + PS2_KBDAT[7] + PS2_KBDAT[8])%2):/1 
+									  }; 
+				  }
+	constraint c4 { PS2_KBDAT[8:1] dist {8'hF0:/40, [8'h00:8'hFF]:/60}; }
 
 	
 	`uvm_object_utils_begin(ps2_item)
@@ -44,7 +49,7 @@ class generator extends uvm_sequence;
 		super.new(name);
 	endfunction
 	
-	int num = 100;
+	int num = 2000;
 	
 	virtual task body();
 		for (int i = 0; i < num; i++) begin
@@ -212,6 +217,7 @@ class scoreboard extends uvm_scoreboard;
 					if(data_bit == 0) begin
 						STATE_next = READING;
 						COUNTER_next = 0;
+						err_code_next = 0;
 					end					
 				end
 				READING: begin
@@ -232,7 +238,6 @@ class scoreboard extends uvm_scoreboard;
 				END_READ: begin
 					if(COUNTER_next == 0) begin
 						if(data_bit == 1'b1 && parity_counter_next % 2 == 1 || data_bit == 1'b0 && parity_counter_next % 2 == 0) begin
-							STATE_next = NOT_ACTIVE;
 							COUNTER_next = 0;
 							parity_counter_next = 0;
 							code_vector_next = 0;
@@ -246,24 +251,26 @@ class scoreboard extends uvm_scoreboard;
 						if(data_bit == 0) begin
 							code_vector_next = 0;
 							code_vector_buffer_next = 0;
-							err_code_next = 2'b10;
+							err_code_next = err_code_next | 2'b10;
 						end
 						else begin
-							
-							if(code_vector_next[7:0] == code_vector_buffer_next || (
+
+							if(err_code_next != 2'b01) begin
+								if(code_vector_next[7:0] == code_vector_buffer_next || (
 								code_vector_next[7:0] != 8'hE0 && code_vector_next[7:0] != 8'hF0 && code_vector_next[15:8] == 8'h00
-							)) begin
-								code_vector_next = {{8{1'b0}}, code_vector_buffer_next};
-							end		
-							else if(	(code_vector_next[15:8] == 8'hF0 || code_vector_next[15:8] == 8'hE0) &&
-										(code_vector_next[7:0] != 8'hF0 && code_vector_next[7:0] != 8'hE0)
-							) begin 
-								code_vector_next = 0;
-								code_vector_next = code_vector_next | code_vector_buffer_next;
-							end
-							else begin
-								code_vector_next = code_vector_next << 8;
-								code_vector_next = code_vector_next | code_vector_buffer_next;
+								)) begin
+									code_vector_next = {{8{1'b0}}, code_vector_buffer_next};
+								end		
+								else if(	(code_vector_next[15:8] == 8'hF0 || code_vector_next[15:8] == 8'hE0) &&
+											(code_vector_next[7:0] != 8'hF0 && code_vector_next[7:0] != 8'hE0)
+								) begin 
+									code_vector_next = 0;
+									code_vector_next = code_vector_next | code_vector_buffer_next;
+								end
+								else begin
+									code_vector_next = code_vector_next << 8;
+									code_vector_next = code_vector_next | code_vector_buffer_next;
+								end	
 							end	
 						end
 						COUNTER_next = -1;

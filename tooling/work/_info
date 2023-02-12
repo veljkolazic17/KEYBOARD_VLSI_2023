@@ -7,52 +7,115 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/admin/Desktop/Projekat/tooling
+Z0 dC:/Users/admin/Desktop/KEYBOARD_VLSI_2023/tooling
 Toptimized_design
-Z1 !s110 1676132814
-VzG6nU0?IK67I_904?B_g31
+!s110 1676225817
+VKeP5J9Yke4R^dVl>GzDk12
 04 3 4 work ps2 fast 0
-04 13 4 work testbench_ps2 fast 0
+04 13 4 work testbench_uvm fast 0
 o-work work -override_timescale {1 ps / 1 ps} +acc
 noptimized_design
 OL;O;10.4c;61
 vps2
-R1
+!s110 1676225815
 !i10b 1
-!s100 ihWgo6hFV4S;NFmE?_E911
-IHWNTW=8Yz`J=1z@4lGGXF2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 8E9DKoFgKL<W@gIgD_UML2
+IOF148X2>0U9K8GOGUfg870
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1676132741
+w1676225804
 8../src/simulation/modules/ps2.v
 F../src/simulation/modules/ps2.v
 L0 1
-Z3 OL;L;10.4c;61
+Z2 OL;L;10.4c;61
 r1
 !s85 0
 31
-Z4 !s108 1676132814.000000
-Z5 !s107 ../src/simulation/testbench_ps2.v|../src/simulation/modules/ps2.v|
-Z6 !s90 -work|work|-l|./vlog_compile.log|-override_timescale|1 ps / 1 ps|../src/simulation/modules/ps2.v|../src/simulation/testbench_ps2.v|
+Z3 !s108 1676225815.000000
+Z4 !s107 C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../src/simulation/testbench_uvm.sv|../src/simulation/modules/ps2.v|
+Z5 !s90 -work|work|-l|./vlog_compile.log|-override_timescale|1 ps / 1 ps|../src/simulation/modules/ps2.v|../src/simulation/testbench_uvm.sv|
 !i113 0
-Z7 o-work work -override_timescale {1 ps / 1 ps} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-vtestbench_ps2
+Z6 o-work work -override_timescale {1 ps / 1 ps} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Yps2_if
+Z7 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z8 DXx6 mtiUvm 7 uvm_pkg 0 22 02@e1POGTiN=><];7MkU?0
+Z9 DXx4 work 21 testbench_uvm_sv_unit 0 22 kPZA?IU8oj]Dj2]OF_j[B3
 R1
-!i10b 1
-!s100 :hEJbSD>PFMd9nnSbYCcD2
-I9lIbRHOi4?64zDbD=F:ok1
-R2
-R0
-w1676132813
-8../src/simulation/testbench_ps2.v
-F../src/simulation/testbench_ps2.v
-L0 1
-R3
 r1
 !s85 0
 31
+!i10b 1
+!s100 kD7hmh?nj;j;]Iz7=Qh?M0
+I4RRdP30AbD16a4m`EJcRA3
+Z10 !s105 testbench_uvm_sv_unit
+S1
+R0
+Z11 w1676224719
+Z12 8../src/simulation/testbench_uvm.sv
+Z13 F../src/simulation/testbench_uvm.sv
+L0 357
+R2
+R3
 R4
 R5
-R6
 !i113 0
+R6
+vtestbench_uvm
 R7
+R8
+R9
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 =fk]jG2?F=LFN^jRX7Mbo0
+I07??PAaFUdQd3GfUL<R[d3
+R10
+S1
+R0
+R11
+R12
+R13
+L0 371
+R2
+R3
+R4
+R5
+!i113 0
+R6
+Xtestbench_uvm_sv_unit
+R7
+R8
+VkPZA?IU8oj]Dj2]OF_j[B3
+r1
+!s85 0
+31
+!i10b 1
+!s100 3XQRl<OnMJZgnWL[U59on2
+IkPZA?IU8oj]Dj2]OF_j[B3
+!i103 1
+S1
+R0
+R11
+R12
+R13
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+FC:/questasim64_10.4c/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+L0 2
+R2
+R3
+R4
+R5
+!i113 0
+R6
